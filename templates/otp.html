@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <body>
+    {% block header %}
+      <h1>{% block title %}Enter Otp{% endblock %}</h1>
+    {% endblock %}
+    <style>
+      :root{
+        --primary-font-family: 'Poppins', sans-serif;
+        --light-white:#f5f8fa;
+        --gray:#5e6278;
+        --gray-1:#e3e3e3;
+        --bs-body-bg:rgb(118, 46, 147);
+    
+      
+    }
+    body{
+      background-color: #D7F5FF;
+    }
+    
+    .center {
+      text-align: center;
+    
+    }
+    </style>
+    
+    <div class="center">
+    {% block content %}
+      <p class="center">
+        Please enter the otp that we sent to your email you registered with.
+      </p>
+    
+      <form method="post" action='/verifyotp'>
+        <label  for="otp">OTP</label>
+        <input type="otp" name="otp" id="otp" required>
+        <p >Enter Password</p>
+        <input  type="password" name="passw" id="password" required>
+        <input type="submit" value="Submit">
+      </form>
+    {% endblock %}
+    </div>
+    
+    </body>
+</body>
+</html>
